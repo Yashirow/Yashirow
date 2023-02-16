@@ -17,15 +17,13 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           filename: general.svg
-          output_action: pull-request
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+          output_action: pull-request
           
       - name: Metrics - Anilist
         uses: lowlighter/metrics@latest
         with:
           filename: anilist.svg
-          output_action: pull-request-merge
           token: NOT_NEEDED
           base: ""
           plugin_anilist: yes
@@ -34,3 +32,4 @@ jobs:
           plugin_anilist_sections: favorites, characters
           plugin_anilist_limit: 0
           plugin_anilist_shuffle: no
+          output_action: pull-request-merge
