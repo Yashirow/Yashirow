@@ -4,24 +4,28 @@ on:
   schedule: [{cron: "0 16 * * *"}]
   # 💡 The following line lets you run workflow manually from the action tab!
   workflow_dispatch:
+  push: {branches: ["master", "main"]}
 jobs:
-  metrics:
+  github-metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
     
       - name: Metrics - General
-        if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           filename: general.svg
+          output_action: pull-request
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           
       - name: Metrics - Anilist
-        if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           filename: anilist.svg
+          output_action: pull-request-merge
           token: NOT_NEEDED
           base: ""
           plugin_anilist: yes
