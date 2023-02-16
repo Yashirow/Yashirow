@@ -1,6 +1,2 @@
-<picture>
-  <img src="/general.svg" alt="Metrics">
-</picture>
-<picture>
-  <img src="/anilist.svg" alt="Metrics - Anilist">
-</picture>
+[<img align="left" width="390" alt="general" src="/stats/general.svg">](#)
+[<img align="right" width="390" alt="anilist" src="/stats/anilist.svg">](#)
