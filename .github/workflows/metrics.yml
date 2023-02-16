@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           output_action: gist
-          committer_gist: ${{ METRICS_GIST }}
+          committer_gist: ${{ secrets.METRICS_GIST }}
           
       - name: Metrics - Anilist
         if: ${{ success() || failure() }}
@@ -27,7 +27,7 @@ jobs:
           token: NOT_NEEDED
           base: ""
           output_action: gist
-          committer_gist: ${{ METRICS_GIST }}
+          committer_gist: ${{ secrets.METRICS_GIST }}
           plugin_anilist: yes
           plugin_anilist_user: Yashirow
           plugin_anilist_medias: anime
