@@ -16,14 +16,14 @@ jobs:
       - name: Metrics - General
         uses: lowlighter/metrics@latest
         with:
-          filename: stats/general.svg
+          filename: .github/stats/general.svg
           token: ${{ secrets.METRICS_TOKEN }}
           output_action: pull-request
           
       - name: Metrics - Anilist
         uses: lowlighter/metrics@latest
         with:
-          filename: stats/anilist.svg
+          filename: .github/stats/anilist.svg
           token: NOT_NEEDED
           base: ""
           plugin_anilist: yes
